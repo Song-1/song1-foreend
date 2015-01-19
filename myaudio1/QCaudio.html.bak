@@ -1,0 +1,578 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="QCaudio.css" media="all">
+<link rel="stylesheet" type="text/css" href="ui-playlist.css" media="all">
+<script src="jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="QCaudio.js" type="text/javascript"></script>
+<script src="a.tbcdn.cn1.js" type="text/javascript"></script>
+<script src="a.tbcdn.cn2.js" type="text/javascript"></script>
+
+<title>QCvideo</title>
+
+</head>
+ <script type="text/javascript">
+     // data={songid , realImgURL, album, songname, singer, timestate}
+	 var playList = [
+		{
+			'artist' : '陈绮贞',
+			'musicName' : '旅行的意义',
+			'musicAlbum' : '<旅行的意义> 2004',
+			'musicURL' : 'http://file.dengo.org/music/cqz_lxdyy.mp3',
+			'avatarURL' : 'avatar/cqz.jpg',
+			'musicTime' : '245'
+		},
+		{
+			'artist' : '陈绮贞',
+			'musicName' : '华丽的冒险',
+			'musicAlbum' : '<太阳> 2005',
+			'musicURL' : 'http://file.dengo.org/music/cqz_hldmx.mp3',
+			'avatarURL' : 'avatar/cqz.jpg',
+			'musicTime' : '331'
+		},
+		{
+			'artist' : '陈奕迅',
+			'musicName' : '多少',
+			'musicAlbum' : '<上五楼的快活> 2010',
+			'musicURL' : 'http://file.dengo.org/music/cyx_ds.mp3',
+			'avatarURL' : 'avatar/cyx.jpg',
+			'musicTime' : '297'
+		},
+		{
+			'artist' : '陈奕迅',
+			'musicName' : '给你',
+			'musicAlbum' : '<上五楼的快活> 2010',
+			'musicURL' : 'http://file.dengo.org/music/cyx_gn.mp3',
+			'avatarURL' : 'avatar/cyx.jpg',
+			'musicTime' : '314'
+		},
+		{
+			'artist' : '梁静茹',
+			'musicName' : '花园',
+			'musicAlbum' : '<隋唐英雄传> 2003',
+			'musicURL' : 'http://file.dengo.org/music/ljr_hy.mp3',
+			'avatarURL' : 'avatar/ljr.jpg',
+			'musicTime' : '287'
+		},
+		{
+			'artist' : '梁静茹',
+			'musicName' : '最想环游的世界',
+			'musicAlbum' : '<恋爱的力量> 2003',
+			'musicURL' : 'http://file.dengo.org/music/ljr_zxhydsj.mp3',
+			'avatarURL' : 'avatar/ljr.jpg',
+			'musicTime' : '283'
+		},
+		{
+			'artist' : '王力宏',
+			'musicName' : '你不知道的事',
+			'musicAlbum' : '<火力全开> 2011',
+			'musicURL' : 'http://file.dengo.org/music/wlh_nbzdds.mp3',
+			'avatarURL' : 'avatar/wlh.jpg',
+			'musicTime' : '280'
+		},
+		{
+			'artist' : '王力宏',
+			'musicName' : '需要人陪',
+			'musicAlbum' : '<十八般武艺> 2010',
+			'musicURL' : 'http://file.dengo.org/music/wlh_xyrp.mp3',
+			'avatarURL' : 'avatar/wlh.jpg',
+			'musicTime' : '252'
+		},
+		{
+			'artist' : '张惠妹',
+			'musicName' : '记得',
+			'musicAlbum' : '<真实> 2001',
+			'musicURL' : 'http://file.dengo.org/music/zhm_jd.mp3',
+			'avatarURL' : 'avatar/zhm.jpg',
+			'musicTime' : '290'
+		},
+		{
+			'artist' : '张惠妹',
+			'musicName' : '我最亲爱的',
+			'musicAlbum' : '<你在看我吗> 2011',
+			'musicURL' : 'http://file.dengo.org/music/zhm_wzqad.mp3',
+			'avatarURL' : 'avatar/zhm.jpg',
+			'musicTime' : '285'
+		}
+	];
+	
+	function playSong(id){
+		
+		MPlayer.play(id);
+
+	}
+	var BROWSER = {};
+    var USERAGENT = navigator.userAgent.toLowerCase();
+    
+    function browserVersion(types) {
+	var other = 1;
+	for(i in types) {
+		var v = types[i] ? types[i] : i;
+		if(USERAGENT.indexOf(v) != -1) {
+			var re = new RegExp(v + '(\\/|\\s|:)([\\d\\.]+)', 'ig');
+			var matches = re.exec(USERAGENT);
+			var ver = matches != null ? matches[2] : 0;
+			other = ver !== 0 && v != 'mozilla' ? 0 : other;
+		}else {
+			var ver = 0;
+		}
+		eval('BROWSER.' + i + '= ver');
+	}
+	alert(other);
+	BROWSER.other = other;
+   }
+  browserVersion({'ie':'msie','firefox':'','chrome':'','opera':'','safari':'','mozilla':'','webkit':'','maxthon':'','qq':'qqbrowser','rv':'rv'});
+</script>
+
+<body>
+
+
+<!--middle begin-->
+
+  <div id="player-main"> 
+   <div id="top"> 
+    <div id="J_header"> 
+     <div class="logo"> 
+      <h1><a href="http://www.xiami.com/" target="_blank">虾米音乐</a></h1> 
+     </div> 
+     <div class="search-wrap"> 
+      <div class="search-content"> 
+       <form action="http://www.xiami.com/search" method="get" id="search" target="_blank"> 
+        <input id="J_searchStatus" type="submit" /> 
+        <input type="hidden" name="pos" value="1" /> 
+        <div class="search-input">
+         <input id="J_searchInput" autocomplete="off" type="text" name="key" />
+        </div> 
+       </form> 
+      </div> 
+     </div> 
+     <div class="userinfo" id="J_userInfo"> 
+      <div class="user unlogin"> 
+       <div class="avatar"> 
+        <img src="http://gtms01.alicdn.com/tps/i1/T1UJFKFtlfXXamt9jd-34-34.png" width="30" height="30" /> 
+       </div> 
+      </div> 
+      <div class="mod-login" id="J_login"> 
+       <div class="login-content">
+        马上 
+        <a href="javascript:;" id="J_miniLogin">登录</a>
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="middle" class="playing"> 
+    <div id="J_mainWrap" class="main-wrap"> 
+     <!-- 侧边栏 left begin --> 
+     <div class="main-sidebar"> 
+      <div class="menu-outer"> 
+       <ul id="J_sidebarMenu"> 
+        <li class="current" id="J_menuPlaying" data-page="J_pagePlayList"> <a data-spm-anchor-id="a1z1s.7154410.0.0"><i class="icon-play"></i>正在播放</a> </li> 
+        <li id="J_menuHistory" data-page="J_pageHistory"> <a data-spm-anchor-id="a1z1s.7154410.0.0"><i class="icon-history"></i>播放历史</a> </li> 
+        <li id="J_menuMyfav" data-page="J_pageMyfav"> <a data-spm-anchor-id="a1z1s.7154410.0.0"><i class="icon-myfav"></i>我收藏的单曲</a> </li> 
+       </ul> 
+      </div> 
+      <div class="collect-outer"> 
+       <div class="collect-title"> 
+        <h3>我创建的精选集</h3> 
+        <span><a class="icon-addCollect" id="J_createCollect" title="新建精选集"></a></span> 
+       </div> 
+      </div> 
+      <div class="collect-list"> 
+       <div id="J_collectScrollView" class="ks-scroll-view"> 
+        <!-- 滚动内容 --> 
+        <div class="ks-scroll-view-content" id="J_collectList">
+         <div class="collect-none"></div>
+        </div> 
+        <!-- 滚动内容 end --> 
+       </div> 
+      </div> 
+     </div> 
+     <!-- 侧边栏 left end --> 
+     
+     <!--middle content begin-->
+     <div id="J_tab" class="main-body"> 
+      <!-- 正在播放 begin --> 
+      <div id="J_pagePlayList" class="main-page" data-spm="1996860241" style="display:block"> 
+       <div class="ui-playlist-header ui-row-item"> 
+        <div class="ui-row-item-body"> 
+         <div class="ui-row-item-column c1">
+           歌曲
+          <span id="J_trackCount">(50)</span> 
+         </div> 
+         <div class="ui-row-item-column c2">
+           演唱者 
+         </div> 
+         <div class="ui-row-item-column c3">
+           专辑 
+         </div> 
+        </div> 
+       </div> 
+       <div class="ui-playlist-body"> 
+        <div id="J_tracksScrollView" class="ks-scroll-view"> 
+         <!-- 歌曲列表 --> 
+         <div id="ks-component855" class="ks-scrollbar
+
+ ks-scrollbar-y  
+
+" style="-webkit-user-select: none;">
+          <div id="ks-scrollbar-arrow-up-ks-component855" class="ks-scrollbar-y-arrow-up"> 
+           <a href="javascript:void('up')">up</a> 
+          </div> 
+          <div id="ks-scrollbar-arrow-down-ks-component855" class="ks-scrollbar-y-arrow-down"> 
+           <a href="javascript:void('down')">down</a> 
+          </div> 
+          <!--<div id="ks-scrollbar-track-ks-component855" class="ks-scrollbar-y-track"> 
+           <div id="ks-scrollbar-drag-ks-component855" class="ks-scrollbar-y-drag" style="height: 34.34911525585844px; -webkit-transform: translateX(0px) translateY(0px) translateZ(0px);"> 
+            <div class="ks-scrollbar-y-drag-top"> 
+            </div> 
+            <div class="ks-scrollbar-y-drag-center"> 
+            </div> 
+            <div class="ks-scrollbar-y-drag-bottom"> 
+            </div> 
+           </div> 
+          </div>-->
+         </div>
+         <div class="ks-scroll-view-content" style="-webkit-transform: translateX(0px) translateY(0px) translateZ(0px);"> 
+          <!-- 列表 begin -->  
+          <div class="ui-tracks-wrap" id="J_playTracksList"> 
+          
+        <!--<h2>香格里拉</h2><a href="javascript:;" onclick="playSong(playList[0]);return false;"  class="icon_play">播放</a>
+			<h2>香格里拉</h2><a href="javascript:;" onclick="playSong(playList[1]);return false;"  class="icon_play">播放</a>
+			<h2>香格里拉</h2><a href="javascript:;" onclick="playSong(playList[2]);return false;"  class="icon_play">播放</a>
+			<h2>香格里拉</h2><a href="javascript:;" onclick="playSong(playList[3]);return false;"  class="icon_play">播放</a>
+			<h2>香格里拉</h2><a href="javascript:;" onclick="playSong(playList[4]);return false;"  class="icon_play">播放</a>
+			<h2>香格里拉</h2><a href="javascript:;" onclick="playSong(playList[5]);return false;"  class="icon_play">播放</a>
+			<h2>香格里拉</h2><a href="javascript:;" onclick="playSong(playList[6]);return false;"  class="icon_play">播放</a>
+			<h2>香格里拉</h2><a href="javascript:;" onclick="playSong(playList[7]);return false;"  class="icon_play">播放</a>
+			<h2>香格里拉</h2><a href="javascript:;" onclick="playSong(playList[8]);return false;"  class="icon_play">播放</a>-->
+
+          
+           <div class="ui-row-item ui-track-item ui-track-current" data-index="0" id="J_trackList1772313063"> 
+            <div class="ui-track-main"> 
+             <div class="ui-track-checkbox"> 
+              <input type="checkbox" class="ui-track-item-id" name="track" id="J_track1772313063" value="1772313063"> 
+             </div> 
+             <div class="ui-track-sort"  onclick="playSong(playList[0]);return false;">
+              <em>1</em>
+             </div> 
+             <div class="ui-row-item-body"> 
+              <div class="ui-row-item-column c1" data-id="1772313063">
+               <span title="是否 (Live Piano Session)">旅行的意义</span>
+              </div> 
+              <div class="ui-row-item-column c2" data-artist-id="55712">
+               <a href="http://www.xiami.com/artist/55712" target="_blank" title="陈绮贞">陈绮贞</a>
+              </div> 
+              <div class="ui-row-item-column c3" data-album-id="1081733473">
+               <a href="http://www.xiami.com/album/1081733473" target="_blank" title="旅行的意义">旅行的意义</a>
+              </div> 
+             </div> 
+             <div class="ui-track-control"> 
+              <a class="fav-btn icon-track-fav" data-type="track" data-event="fav" title="收藏"></a> 
+              <a class="more-btn icon-track-more" data-type="track" data-event="more" title="更多"></a> 
+              <a class="delete-btn icon-track-delete" data-type="track" data-event="delete" title="删除"></a> 
+             </div> 
+            </div> 
+            <!--<div class="ui-roam-wrap" id="J_roamWrap1772313063"> 
+             <div class="ui-roam-head">
+              <a class="ui-roam-open" data-event="roam">漫游相似歌曲</a>
+             </div> 
+            </div>--> 
+           </div> 
+           <div class="ui-row-item ui-track-item" data-index="1" id=""> 
+            <div class="ui-track-main"> 
+             <div class="ui-track-checkbox"> 
+              <input type="checkbox" class="ui-track-item-id" name="track" id="J_track1770195084" value="1770195084"> 
+             </div> 
+             <div class="ui-track-sort" onclick="playSong(playList[5]);return false;">
+              <em>2</em>
+             </div> 
+             <div class="ui-row-item-body"> 
+              <div class="ui-row-item-column c1" data-id="1770195084">
+               <span title="时间都去哪了">时间都去哪了</span>
+              </div> 
+              <div class="ui-row-item-column c2" data-artist-id="67100">
+               <a href="http://www.xiami.com/artist/67100" target="_blank" title="王铮亮">王铮亮</a>
+              </div> 
+              <div class="ui-row-item-column c3" data-album-id="439748">
+               <a href="http://www.xiami.com/album/439748" target="_blank" title="爱的自选">爱的自选</a>
+              </div> 
+             </div> 
+             <div class="ui-track-control"> 
+              <a class="fav-btn icon-track-fav" data-type="track" data-event="fav" title="收藏"></a> 
+              <a class="more-btn icon-track-more" data-type="track" data-event="more" title="更多"></a> 
+              <a class="delete-btn icon-track-delete" data-type="track" data-event="delete" title="删除"></a> 
+             </div> 
+            </div> 
+            <div class="ui-roam-wrap" id="J_roamWrap1770195084"> 
+             <div class="ui-roam-head"></div> 
+            </div> 
+           </div>  
+          </div> 
+                    <script>
+          
+          	/*  switch(document.getElementById("J_checkAll_track").checked){
+				  
+				  case true:
+                  $("#J_playTracksList [name=track]:checkbox").removeAttr("checked"); 
+				   
+				  $("#J_playTracksList [name=track]:checkbox").attr("checked", true);
+
+				  break;
+				  
+				  case false:
+                  
+				  
+				  $("#J_playTracksList [name=track]:checkbox").attr("checked", false);
+				  
+				  break;
+				  
+				  default:
+				  break;
+
+				  }
+
+			  } */
+         function select_all_input(){
+
+		     if(this.checked){
+			        
+					 $("#J_playTracksList [name=track]:checkbox").attr("checked", true);
+			 
+			 }else{
+			 
+			        $("#J_playTracksList [name=track]:checkbox").removeAttr("checked"); 
+			 
+			 }
+ 
+
+
+
+		  
+          </script>
+
+          
+          
+          
+          <!-- 列表 end --> 
+         </div> 
+         <!-- 歌曲列表 end --> 
+        </div> 
+       </div> 
+       <div class="ui-playlist-footer"> 
+        <div class="ui-track-all"> 
+         <div class="ui-all-checkbox"> 
+          <input id="J_checkAll_track" type="checkbox"   onclick="select_all_input();" /> 
+         </div> 
+         <div class="ui-all-item"> 
+          <a class="icon-tracks-delete" id="J_trackListDelete">删除</a> 
+         </div> 
+         <div class="ui-all-item"> 
+          <a class="icon-tracks-fav" id="J_trackListFav">收藏</a> 
+         </div> 
+         <div class="ui-all-item"> 
+          <a class="icon-tracks-add" id="J_trackListAdd" onclick="SEIYA.collects('track')">添加到精选集</a> 
+         </div> 
+         <div class="ui-all-item"> 
+          <a class="icon-tracks-more" data-type="track" data-event="more" id="J_trackListMore">更多</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <!-- 正在播放 end --> 
+      <!-- 播放历史 begin --> 
+      <div id="J_pageHistory" class="main-page" data-spm="1996860237" style="display: none"> 
+       <div class="ui-history-title"> 
+        <div class="ui-history-title-con"> 
+         <a class="icon-playAllBtn" title="播放全部" id="J_playAllMyfav" onclick="SEIYA.addPlaySongs('history')"></a> 
+         <h2>播放历史</h2> 
+         <p id="J_historyCount"> <span>loading</span> </p> 
+        </div> 
+       </div> 
+       <div class="ui-history-header ui-row-item"> 
+        <div class="ui-row-item-body"> 
+         <div class="ui-row-item-column c1">
+           歌曲 
+         </div> 
+         <div class="ui-row-item-column c2">
+           演唱者 
+         </div> 
+         <div class="ui-row-item-column c3">
+           试听时间 
+         </div> 
+        </div> 
+       </div> 
+       <div class="ui-history-body"> 
+        <div id="J_historyScrollView" class="ks-scroll-view"> 
+         <!-- 歌曲列表 --> 
+         <div class="ks-scroll-view-content"> 
+          <!-- 列表 begin --> 
+          <div class="ui-tracks-wrap" id="J_historyTracksList"> 
+          </div> 
+          <!-- 列表 end --> 
+         </div> 
+         <!-- 歌曲列表 end --> 
+        </div> 
+       </div> 
+       <div class="ui-history-footer"> 
+        <div class="ui-track-all"> 
+         <div class="ui-all-checkbox"> 
+          <input id="J_checkAll_history" type="checkbox" onclick="SEIYA.syncCheck(this,'history')" /> 
+         </div> 
+         <div class="ui-all-item"> 
+          <a class="icon-tracks-play" onclick="SEIYA.playAllSongs('history')">播放</a> 
+         </div> 
+         <div class="ui-all-item"> 
+          <a class="icon-tracks-add" onclick="SEIYA.collects('history')">添加到精选集</a> 
+         </div> 
+         <div class="ui-all-item"> 
+          <a class="icon-tracks-more" data-type="history" data-event="more">更多</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <!-- 播放历史 end --> 
+      <!-- 我收藏的单曲 begin --> 
+      <div id="J_pageMyfav" class="main-page" data-spm="1996860218" style="display:none"> 
+       <div class="ui-myfav-title"> 
+        <div class="ui-myfav-title-con"> 
+         <a class="icon-playAllBtn" title="播放全部" id="J_playAllMyfav" onclick="SEIYA.addPlaySongs('fav')"></a> 
+         <h2>我收藏的单曲</h2> 
+         <p id="J_favCount"> <span>loading </span> </p> 
+        </div> 
+       </div> 
+       <div class="ui-myfav-header ui-row-item"> 
+        <div class="ui-row-item-body"> 
+         <div class="ui-row-item-column c1">
+           歌曲 
+         </div> 
+         <div class="ui-row-item-column c2">
+           演唱者 
+         </div> 
+         <div class="ui-row-item-column c3">
+           专辑 
+         </div> 
+        </div> 
+       </div> 
+       <div class="ui-myfav-body"> 
+        <div id="J_myfavScrollView" class="ks-scroll-view"> 
+         <div class="ks-scroll-view-content"> 
+          <!-- 收藏单曲 begin --> 
+          <div class="ui-tracks-wrap" id="J_myFavTracksList"> 
+          </div> 
+          <!-- 收藏单曲 begin --> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="ui-myfav-footer"> 
+        <div class="ui-track-all"> 
+         <div class="ui-all-checkbox"> 
+          <input id="J_checkAll_fav" type="checkbox" onclick="SEIYA.syncCheck(this,'fav')" /> 
+         </div> 
+         <div class="ui-all-item"> 
+          <a class="icon-tracks-play" onclick="SEIYA.playAllSongs('fav')">播放</a> 
+         </div> 
+         <div class="ui-all-item"> 
+          <a class="icon-tracks-add" onclick="SEIYA.collects('fav')">添加到精选集</a> 
+         </div> 
+         <div class="ui-all-item"> 
+          <a class="icon-tracks-more" data-type="fav" data-event="more">更多</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <!-- 我收藏的单曲 end --> 
+      <!-- 精选集 detail --> 
+      <div id="J_pageCollect" class="main-page" data-spm="1996860182" style="display:none"> 
+      </div> 
+      <!-- 精选集 detail end --> 
+     </div>  
+     <!--middle content end-->
+     
+     <!--侧边栏 right begin-->
+     <div id="J_lrcWrap" class="main-outher" data-spm="1996860293"> 
+      <div class="ui-album-cover" id="J_albumCover"> 
+       <div id="J_playerCover" class="ui-album-img">
+        <a href="http://www.xiami.com/album/1081733473" target="_blank" title="G.E.M. X.X.X. Live-G.E.M.邓紫棋"><img id="J_playerCoverImg" src="http://img.xiami.net/images/album/img12/55712/10817334731383895914_2.jpg" alt="G.E.M. X.X.X. Live-G.E.M.邓紫棋" /></a>
+       </div> 
+      </div> 
+      <div class="ui-album-sale" id="J_albumSale" data-spm="1997588397">
+       <a class="none" onclick="javascript:goldlog.record('/xiamipc.1.12','','albumid=1081733473&amp;itemsid=1772313063&amp;userid=0&amp;action=search','H46807196')" href="http://music.taobao.com/market/music/list.php?atype=b&amp;cat=34,23&amp;style=grid&amp;q=G.E.M.+X.X.X.+Live+G.E.M.%E9%82%93%E7%B4%AB%E6%A3%8B&amp;as=0&amp;viewIndex=1&amp;ats=5702&amp;same_info=1&amp;isnew=2&amp;tid=0&amp;_input_charset=utf-8&amp;nopub=1" target="_blank">去音乐馆淘一下</a>
+      </div> 
+      <div class="ui-player-lrc" id="J_lyricScrollWrap" style="top: 257px;"> 
+       <div id="J_lyricScrollView" class="ks-scroll-view"> 
+        <div id="ks-component1069" class="ks-scrollbar
+
+ ks-scrollbar-y  
+
+" style="-webkit-user-select: none;">
+         <div id="ks-scrollbar-arrow-up-ks-component1069" class="ks-scrollbar-y-arrow-up"> 
+          <a href="javascript:void('up')">up</a> 
+         </div> 
+         <div id="ks-scrollbar-arrow-down-ks-component1069" class="ks-scrollbar-y-arrow-down"> 
+          <a href="javascript:void('down')">down</a> 
+         </div> 
+         <!--<div id="ks-scrollbar-track-ks-component1069" class="ks-scrollbar-y-track"> 
+          <div id="ks-scrollbar-drag-ks-component1069" class="ks-scrollbar-y-drag" style="height: 20px;"> 
+           <div class="ks-scrollbar-y-drag-top"> 
+           </div> 
+           <div class="ks-scrollbar-y-drag-center"> 
+           </div> 
+           <div class="ks-scrollbar-y-drag-bottom"> 
+           </div> 
+          </div> 
+         </div>-->
+        </div>
+        <div class="ks-scroll-view-content"> 
+         <div class="ui-player-lrc-wrap" id="J_playerLrc"> 
+          <ul> 
+           <li class="ui-lrc-line ui-lrc-current">是否</li> 
+           <li class="ui-lrc-line">演唱：邓紫棋</li> 
+           <li class="ui-lrc-line">&nbsp;</li> 
+           <li class="ui-lrc-line">是否这次我将真的离开你</li> 
+           <li class="ui-lrc-line">是否这次我将不再哭</li> 
+           <li class="ui-lrc-line">是否这次我将一去不回头</li> 
+           <li class="ui-lrc-line">走向那条漫漫永无止境的路</li> 
+           <li class="ui-lrc-line">是否这次我已真的离开你</li> 
+           <li class="ui-lrc-line">是否泪水已干不再流</li> 
+           <li class="ui-lrc-line">是否应验了我曾说的那句话</li> 
+           <li class="ui-lrc-line">情到深处人孤独</li> 
+           <li class="ui-lrc-line">多少次的寂寞挣扎在心头</li> 
+           <li class="ui-lrc-line">只为挽回我将远去的脚步</li> 
+           <li class="ui-lrc-line">多少次我忍住胸口的泪水</li> 
+           <li class="ui-lrc-line">只是为了告诉我自己</li> 
+           <li class="ui-lrc-line">我不在乎</li> 
+           <li class="ui-lrc-line">是否这次我已真的离开你</li> 
+           <li class="ui-lrc-line">是否泪水已干不再流</li> 
+           <li class="ui-lrc-line">是否应验了我曾说的那句话</li> 
+           <li class="ui-lrc-line">情到深处人孤独</li> 
+           <li class="ui-lrc-line">多少次的寂寞挣扎在心头</li> 
+           <li class="ui-lrc-line">只为挽回我将远去的脚步</li> 
+           <li class="ui-lrc-line">多少次我忍住胸口的泪水</li> 
+           <li class="ui-lrc-line">只是为了告诉我自己</li> 
+           <li class="ui-lrc-line">我不在乎</li> 
+           <li class="ui-lrc-line">是否这次我已真的离开你</li> 
+           <li class="ui-lrc-line">是否泪水已干不再流</li> 
+           <li class="ui-lrc-line">是否应验了我曾说的那句话</li> 
+           <li class="ui-lrc-line">情到深处人孤独</li> 
+           <li class="ui-lrc-line">&nbsp;</li> 
+          </ul> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div>    
+     <!--侧边栏 right end-->
+    </div> 
+   </div> 
+  </div>
+
+<!--middle end-->
+
+
+
+          
+
+</body>
+</html>

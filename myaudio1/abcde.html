@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+
+<html lang="en-US">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title></title>
+
+<style type="text/css">
+
+    *{margin:0;padding:0;}
+
+    #div1{width:30px; height:400px; background:red;position:relative;top:30px; left:30px;}
+
+    #div2{width:30px; height:30px; background:blue;position:absolute}
+
+    #div3{width:300px; height:400px;border:1px solid blue;position:absolute;left:100px;top:30px; overflow: hidden;}
+
+    #div4{position:absolute;top:0;left:0;}
+
+</style>
+
+<script type="text/javascript">
+
+window.onload=function()
+
+{
+
+    var obj= new zhailei("div")
+
+}
+
+function zhailei(id)
+
+{
+
+    var _this=this;
+
+    this.oDiv1 =document.getElementById(id+"1");
+
+    this.oDiv2 =document.getElementById(id+"2");
+
+    this.oDiv3 =document.getElementById(id+"3");
+
+    this.oDiv4 =document.getElementById(id+"4");
+
+    this.disY=0;
+
+    this.oBtn=true;
+
+    this.oDiv2.style.height=this.oDiv3.offsetHeight/this.oDiv4.offsetHeight*this.oDiv1.offsetHeight+"px";
+
+    this.oDiv2.onmousedown=function(ev)
+
+    {
+
+        _this.fnDown(ev);
+
+    }
+
+    if(this.oDiv1.addEventListener)
+
+    {
+
+        this.oDiv1.addEventListener("DOMMouseScroll",function(ev){_this.toRun(ev)},false);
+
+        this.oDiv4.addEventListener("DOMMouseScroll",function(ev){_this.toRun(ev)},false);
+
+    };
+
+    this.oDiv1.onmousewheel=function(ev)
+
+    {
+
+        _this.toRun(ev)
+
+    };
+
+    this.oDiv4.onmousewheel=function(ev)
+
+    {
+
+        _this.toRun(ev)
+
+    };
+
+}
+
+zhailei.prototype.toRun=function (ev)
+
+{
+
+    var ev = ev || window.event
+
+    this.abc=0;
+
+    if(ev.detail)
+
+    {
+
+        this.oBtn=ev.detail>0?true:false;
+
+    }
+
+    else
+
+    {
+
+        this.oBtn=ev.wheelDelta<0?true:false;
+
+    }
+
+    if(this.oBtn)
+
+    {
+
+        this.abc=this.oDiv2.offsetTop + 10
+
+    }
+
+    else
+
+    {
+
+        this.abc= this.oDiv2.offsetTop - 10;
+
+    }
+
+    if(this.abc<0)
+
+    {
+
+        this.abc = 0;
+
+    }
+
+    else if(this.abc>this.oDiv1.offsetHeight - this.oDiv2.offsetHeight)
+
+    {
+
+        this.abc = this.oDiv1.offsetHeight - this.oDiv2.offsetHeight;
+
+    }
+
+    this.oDiv2.style.top = this.abc + 'px';
+
+    this.soleY = this.abc/(this.oDiv1.offsetHeight - this.oDiv2.offsetHeight);
+
+    this.oDiv4.style.top = - this.soleY * (this.oDiv4.offsetHeight - this.oDiv3.offsetHeight) + 'px';
+
+    if(ev.preventDefault)
+
+    {
+
+        ev.preventDefault()
+
+    }
+
+    return false
+
+}
+
+zhailei.prototype.fnDown=function(ev)
+
+{
+
+    var _this =this
+
+    var ev = ev || window.event;
+
+    this.disY=ev.clientY-this.oDiv2.offsetTop
+
+    if(this.oDiv2.setCapture)
+
+    {
+
+        this.oDiv2.setCapture()
+
+    }
+
+    document.onmousemove=function(ev)
+
+    {
+
+        _this.fnMove(ev)
+
+    }
+
+    document.onmouseup=function()
+
+    {
+
+        _this.fnUp()
+
+    }
+
+}
+
+zhailei.prototype.fnMove=function(ev)
+
+{
+
+    var ev = ev || window.event;
+
+    this.goMove(ev)
+
+}
+
+zhailei.prototype.fnUp=function()
+
+{
+
+    document.onmousemove=null;
+
+    document.onmouseup=null;
+
+    if(this.oDiv2.releaseCapture)
+
+    {
+
+        this.oDiv2.releaseCapture()
+
+    }
+
+}
+
+zhailei.prototype.goMove=function (ev)
+
+{
+
+    this.abc=ev.clientY-this.disY;
+
+    if(this.abc<0)
+
+    {
+
+        this.abc=0;
+
+    }
+
+    else if(this.abc>this.oDiv1.offsetHeight-this.oDiv2.offsetHeight)
+
+    {
+
+        this.abc=this.oDiv1.offsetHeight-this.oDiv2.offsetHeight;
+
+    }
+
+    this.oDiv2.style.top=this.abc+"px";
+
+    this.scrollX=this.abc/(this.oDiv1.offsetHeight-this.oDiv2.offsetHeight);
+
+    document.title=-this.scrollX*(this.oDiv4.offsetHeight-this.oDiv3.offsetHeight)+"px";
+
+    this.oDiv4.style.top=-this.scrollX*(this.oDiv4.offsetHeight-this.oDiv3.offsetHeight)+"px";
+
+    if(ev.preventDefault)
+
+    {
+
+        ev.preventDefault()
+
+    }
+
+    return false
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div id="div1">
+
+    <div id="div2"></div>
+
+</div>
+
+<div id="div3">
+
+    <div id="div4">
+
+        面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。面向对象(Object Oriented,OO)是当前计算机界关心的重点，它是90年代软件开发方法的主流。面向对象的概念和应用已超越了程序设计和软件开发，扩展到很宽的范围。如数据库系统、交互式界面、应用结构、应用平台、分布式系统、网络管理结构、CAD技术、人工智能等领域。
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

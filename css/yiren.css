@@ -1,0 +1,1058 @@
+#body {
+	margin:0 20px;
+}
+
+#wrapper {
+	overflow:hidden;
+	position:relative;
+	margin:35px auto 60px;
+	border:1px solid #CFD4D7;
+	border-radius:3px;
+	background:#FFF url('http://img.xiami.net/static/img/music/frame_bg.gif') repeat-y -321px 0;
+}
+
+#wrapper,
+#n_header_line .n_header_inner,
+.n_header_sys,
+#foot_wrap,
+#promotion,
+#extra {
+	width:auto;
+	_width:expression(documentElement.clientWidth < 980? "980px" : documentElement.clientWidth > 1100? "1100px" : "auto");
+	max-width:1100px !important;
+	min-width:980px !important;
+}
+
+#content {
+	float:right;
+	width:100%;
+	margin-left:-179px;
+}
+
+#main {
+	margin-left:179px;
+}
+
+/**/
+#tab {
+	clear:both;
+	*position:relative;
+	*z-index:9;
+	_zoom:1;
+	height: 34px;
+}
+
+#tab span {
+	position:relative;
+	float:left;
+	width:20%;
+	background-color:#CFD4D7;
+}
+
+#tab a {
+	display:block;
+	border-width:0 1px 1px 0;
+	border-style:solid;
+	border-color:#CFD4D7;
+	background-color:#F5F9FA;
+	outline:none;
+	font-size:14px;
+	line-height:33px;
+	text-align:center;
+	color:#333;
+}
+
+#tab .first a{
+	border-left-width:0;
+}
+
+
+#tab .last a{
+	border-right-width:0;
+	border-radius:0 2px 0 0;
+}
+
+#tab .current a{
+	border-bottom-color:#FFF;
+	background-color:#FFF;
+}
+/**/
+
+#sidebar {
+	float:left;
+	width:179px;
+}
+
+/**/
+.buttonwhole,
+.dropmenu,
+.buttonleft,
+.buttoncenter,
+.buttonright {
+	padding:0 5px;
+	border:1px solid #CED4D6;
+	border-radius:3px;
+	background:#FFF;
+	background:-moz-linear-gradient(top , #FFF, #F1F4F6);
+	background:-webkit-linear-gradient(top , #FFF, #F1F4F6);
+	background:linear-gradient(top , #FFF, #F1F4F6);
+	font-size:12px;
+	line-height:22px;
+	cursor:pointer;
+	_padding:3px 5px;
+}
+
+.dropmenu {
+	line-height:24px;
+	vertical-align:middle;
+}
+
+.buttonwhole:hover,
+.dropmenu:hover,
+.buttonleft:hover,
+.buttoncenter:hover,
+.buttonright:hover {
+	border-color:#bac0c2;
+	background:#FFF;
+	background:-moz-linear-gradient(top , #FFF, #FAFCFD);
+	background:-webkit-linear-gradient(top , #FFF, #FAFCFD);
+	background:linear-gradient(top , #FFF, #FAFCFD);
+}
+
+.buttonwhole:active,
+.dropmenu:active,
+.buttonleft:active,
+.buttoncenter:active,
+.buttonright:active,
+.buttonleft.current,
+.buttoncenter.current,
+.buttonright.current {
+	border-color:#bac0c2;
+	background:#DDE3E6;
+	background:-moz-linear-gradient(top , #DDE3E6, #FCFDFD);
+	background:-webkit-linear-gradient(top , #DDE3E6, #FCFDFD);
+	background:linear-gradient(top , #DDE3E6, #FCFDFD);
+}
+
+.dropmenu {
+	position:relative;
+}
+
+.dropmenu dd {
+	display:none;
+	position:absolute;
+}
+
+.buttonleft {
+	border-radius:3px 0 0 3px;
+	margin-right:-4px;
+}
+
+.buttoncenter {
+	border-radius:0;
+	margin-right:-4px;
+}
+
+.buttonright {
+	border-radius:0 3px 3px 0;
+}
+/**/
+
+/**/
+#nav {
+	margin-top:-7px;
+	padding-top:7px;
+	border-bottom:1px solid #CED3D6;
+	background-color:#F6F6F6;
+	line-height:54px;
+	text-align:center;
+	*line-height:1;
+	*padding:20px 0;
+}
+
+#nav span {
+	margin:0 5px;
+}
+
+#nav a {
+	display:inline-block;
+	padding:1px 11px;
+	border-radius:3px;
+	line-height:24px;
+	font-size:14px;
+	color:#5D7283;
+}
+
+#nav .current a{
+	background-color:#5D7283;
+	color:#FFF;
+}
+/**/
+
+/**/
+#promotion {
+	margin:35px auto 0;
+	text-align:center;
+}
+
+#promotion a {
+	display:inline-block;
+	width:24%;
+}
+
+#promotion span {
+	position:relative;
+	display:inline-block;
+	overflow:hidden;
+	width:200px;
+	height:120px;
+	font-size:0;
+}
+
+#promotion span:after {
+	content:'';
+	position:absolute;
+	left:0;
+	top:0;
+	width:200px;
+	height:120px;
+	border-radius:3px;
+	box-shadow:1px 1px rgba(0, 0, 0, .3) inset, -1px -1px rgba(0, 0, 0, .3) inset;
+}
+
+#promotion span img {
+	width:200px;
+	height:120px;
+	border-radius:3px;
+}
+
+/**/
+
+/**/
+#hidden_obj{position:absolute;z-index:99;left:0;bottom:0;}
+/**/
+
+/**/
+#main #loader {
+	margin:50px 30px 0;
+	border:1px solid #E1E4E6;
+	border-radius:3px;
+	background-color:#F5F9FA;
+	line-height:28px;
+	text-align:center;
+	color:#666;
+}
+
+#main #loader a {
+	display:block;
+	color:#666;
+}
+
+#main #loader a:hover {
+	background-color:#F0F4F5;
+}
+
+#main #loader.error {
+	border-color:#F0DDC5;
+	background-color:#FFEBD1;
+	color:#C26B1F;
+}
+
+#main #loader.error a {
+	color:#C26B1F;
+}
+
+#main #loader.error a:hover {
+	background-color:#FFEBD1;
+}
+
+#main #loader.loading b {
+	display:inline-block;
+	width:16px;
+	height:16px;
+	margin-right:10px;
+	background:url('http://img.xiami.net/static/img/music/loader.gif');
+	vertical-align:middle;
+}
+/**/
+
+/**/
+#main #notify {
+	display:none;
+	margin:10px 0;
+	border:1px solid #10AD8E;
+	border-radius:3px;
+	background-color:#1ABC9B;
+	line-height:28px;
+	text-align:center;
+	color:#FFF;
+}
+
+#main #notify a {
+	display:block;
+	color:#FFF;
+}
+
+/**/
+
+/**/
+#extra {
+	margin:0 auto;
+	position:relative;
+}
+
+#extra .feedback {
+	position:absolute;
+	right:0;
+	top:-50px;
+}
+
+#extra .feedback:hover {
+	text-decoration:underline;
+}
+/**/.artist {
+}
+
+.artist .image {
+	position:relative;
+	float:left;
+	width:100px;
+	height:100px;
+	font-size:0;
+}
+
+.artist .image:after {
+	content:'';
+	position:absolute;
+	left:0;
+	top:0;
+	width:100px;
+	height:100px;
+	border-radius:3px;
+	box-shadow:1px 1px rgba(0, 0, 0, .3) inset, -1px -1px rgba(0, 0, 0, .3) inset;
+}
+
+.artist .image img {
+	border-radius:3px;
+}
+
+.artist .image i {
+	display:none;
+	position:absolute;
+	z-index:2;
+	left:0;
+	top:0;
+	width:100px;
+	height:100px;
+	background-color:#000;
+	opacity:.3;
+	filter:alpha(opacity=30);
+}
+
+.artist dl {
+	display:none;
+	position:absolute;
+	z-index:4;
+	right:5px;
+	top:5px;
+	*width:46px;
+}
+
+.artist dt {
+	overflow:hidden;
+	height:20px;
+	border:1px solid #555;
+	border-radius:3px;
+	background:#FFF;
+	background:-moz-linear-gradient(top , #FFF, #F2F5F6);
+	background:-webkit-linear-gradient(top , #FFF, #F2F5F6);
+	background:linear-gradient(top , #FFF, #F2F5F6);
+	cursor:pointer;
+}
+
+.artist .image u {
+	float:left;
+	width:24px;
+	height:24px;
+	margin:-2px 0 0 2px;
+	background:url('http://img.xiami.net/static/img/music/icon.png') no-repeat -0px -192px;
+	_background-image:url('http://img.xiami.net/static/img/music/icon.gif');
+}
+
+.artist .image s {
+	float:right;
+	width:24px;
+	height:24px;
+	margin:-2px -2px 0 -4px;
+	background:url('http://img.xiami.net/static/img/music/icon.png') no-repeat -144px -48px;
+	_background-image:url('http://img.xiami.net/static/img/music/icon.gif');
+}
+
+.artist dd {
+	display:none;
+	position:absolute;
+	z-index:5;
+	right:0;
+	top:0;
+}
+
+.artist ul {
+	padding:5px 0;
+	border:1px solid #555;
+	border-radius:3px;
+	background-color:#FFF;
+	box-shadow:2px 2px 5px rgba(0, 0, 0, .2);
+}
+
+.artist li a {
+	display:block;
+	width:65px;
+	padding:0 15px 0 5px;
+	font-size:12px;
+	line-height:24px;
+	color:#333;
+}
+
+.artist li a:hover {
+	background-color:#F5914E;
+	color:#FFF;
+}
+
+.artist q {
+	display:inline-block;
+	width:24px;
+	height:24px;
+	margin-right:5px;
+	background:url('http://img.xiami.net/static/img/music/icon.png') no-repeat;
+	vertical-align:middle;
+	_background-image:url('http://img.xiami.net/static/img/music/icon.gif');
+}
+
+.artist .favourite q {
+	background-position:0 -120px;
+}
+
+.artist .favourite a:hover q {
+	background-position:0 -144px;
+}
+
+.artist .share q {
+	background-position:-48px -120px;
+}
+
+.artist .share a:hover q {
+	background-position:-48px -144px;
+}
+
+.artist .info {
+}
+
+.artist p {
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	line-height:24px;
+	color:#999;
+}
+
+.artist a {
+	line-height:24px;
+	color:#999;
+}
+
+.artist a:hover {
+	color:#666;
+}
+
+.artist strong a {
+	font-size:14px;
+	color:#333;
+}
+
+.artist strong a:hover {
+	color:#F50;
+}#main {
+	padding-bottom:30px;
+	_height:400px;
+}
+
+/**/
+#tab .more {
+	position:absolute;
+	left:108px;
+	top:8px;
+	vertical-align:middle;
+	cursor:pointer;
+}
+
+#tab .more dt {
+	*width:42px;
+}
+
+/**
+#tab .more dt {
+	overflow:hidden;
+	height:20px;
+	border:1px solid #555;
+	border-radius:3px;
+	background:-moz-linear-gradient(top , #FFF, #F2F5F6);
+	cursor:pointer;
+}
+/**/
+
+#tab .more dd {
+	display:none;
+	position: absolute;
+	z-index:5;
+	left:-30px;
+	top:22px;
+	_top:15px;
+}
+
+#tab .more u {
+	float:left;
+	width:24px;
+	height:24px;
+	margin-top:-2px;
+	background:url('http://img.xiami.net/static/img/music/icon.png') no-repeat -24px -72px;
+	_background-image:url('http://img.xiami.net/static/img/music/icon.gif');
+}
+
+#tab .current {
+	_background-color:transparent;
+}
+
+#tab .current .more u {
+	background-position:-24px -48px;
+}
+
+#tab .more u.all {
+	background-position:-24px -48px;
+}
+
+#tab .more u.male {
+	background-position:-48px -48px;
+}
+
+#tab .more u.female {
+	background-position:-72px -48px;
+}
+
+#tab .more u.band {
+	background-position:-96px -48px;
+}
+
+#tab .more s {
+	float:right;
+	width:24px;
+	height:24px;
+	margin:-2px 0 0 -6px;
+	background:url('http://img.xiami.net/static/img/music/icon.png') no-repeat -144px -72px;
+	_background-image:url('http://img.xiami.net/static/img/music/icon.gif');
+}
+
+#tab .current .more s {
+	background-position:-144px -48px;
+}
+
+#tab .more ul {
+	padding:5px 0;
+	border:1px solid #CED4D6;
+	border-radius:3px;
+	background-color:#FFF;
+	box-shadow:2px 2px 5px rgba(0, 0, 0, .2);
+}
+
+#tab .more li {
+	width:100px;
+	cursor:pointer;
+}
+
+#tab .more li a {
+	padding-left:5px;
+	background:transparent;
+	border:none;
+	color:#666;
+	font-size:12px;
+	line-height:24px;
+	text-align:left;
+}
+
+#tab .more a:hover {
+	background-color:#F5914E;
+	color:#FFF;
+}
+
+#tab .more b,
+#tab .more q {
+	display:inline-block;
+	width:14px;
+	height:24px;
+	margin-right:5px;
+	background:url('http://img.xiami.net/static/img/music/icon.png') no-repeat;
+	vertical-align:middle;
+	_background-image:url('http://img.xiami.net/static/img/music/icon.gif');
+}
+
+#tab .more b {
+	background-position:-168px 0;
+}
+
+#tab .more .current b{
+	background-position:-5px -50px;
+}
+
+#tab .more .current a:hover b{
+	background-position:-5px -98px;
+}
+
+#tab .more .fence {
+	margin:5px 0;
+	border-bottom:1px solid #EEE;
+	*font-size:0;
+}
+
+#tab .more .all q {
+	background-position:-29px -49px;
+}
+
+#tab .more .all a:hover q {
+	background-position:-29px -97px;
+}
+
+#tab .more .male q {
+	background-position:-53px -50px;
+}
+
+#tab .more .male a:hover q {
+	background-position:-53px -98px;
+}
+
+#tab .more .female q {
+	background-position:-77px -50px;
+}
+
+#tab .more .female a:hover q {
+	background-position:-77px -98px;
+}
+
+#tab .more .band q {
+	background-position:-101px -50px;
+}
+
+#tab .more .band a:hover q {
+	background-position:-101px -98px;
+}
+/**/
+
+/**/
+#artists {
+	clear:both;
+	overflow:hidden;
+	margin:0 30px;
+	padding:30px 0;
+}
+
+#artists .artist {
+	float:left;
+	width:16.6%;
+	margin-top:30px;
+}
+
+#artists .artist .image {
+	margin:0 0 10px 20px;
+	_margin:0 0 10px 10px;
+}
+
+#artists .artist .info {
+	clear:left;
+	overflow:hidden;
+	width:100px;
+	margin-left:20px;
+}
+
+#artists .artist .info p {
+	_width:100px;
+	height: 24px;
+}
+/**/
+
+/**/
+#pages {
+	clear:both;
+	padding-top:30px;
+	text-align:center;
+}
+/**/
+
+#type {
+	padding-top:65px;
+}
+
+#type dt {
+	padding-top:25px;
+}
+
+#type h3 {
+	margin:0 30px;
+	border-bottom:1px solid #E6E9EB;
+	font-size:18px;
+	line-height:40px;
+	text-align:center;
+}
+
+#type dd {
+	padding-top:10px;
+}
+
+#type li {
+	position:relative;
+	margin-top:20px;
+	text-align:center;
+	line-height:24px;
+	_background-color:#F5F9FA;
+}
+
+#type a {
+	display:block;
+	color:#999;
+}
+
+#type .current a,
+#type li:hover a {
+	color:#333;
+}
+
+#type b {
+	display:block;
+	width:48px;
+	height:48px;
+	margin:0 auto 5px;
+	background:url('http://img.xiami.net/static/img/music/type.png') no-repeat;
+}
+
+#type .pop b {
+	background-position:0 -96px;
+}
+
+#type .pop:hover b,
+#type .current .pop b {
+	background-position:0 -144px;
+}
+
+#type .hot b {
+	background-position:-48px -96px;
+}
+
+#type .hot:hover b,
+#type .current .hot b {
+	background-position:-48px -144px;
+}
+
+#type .new b {
+	background-position:-96px -96px;
+}
+
+#type .new:hover b,
+#type .current .new b {
+	background-position:-96px -144px;
+}
+
+#type .tag b {
+	background-position:-144px -96px;
+}
+
+#type .tag:hover b,
+#type .current .tag b {
+	background-position:-144px -144px;
+}
+
+#type b {
+	display:block;
+	width:48px;
+	height:48px;
+	margin:0 auto 5px;
+	background:url('http://img.xiami.net/static/img/music/type.png') no-repeat;
+}
+
+#type i {
+	display:none;
+	position:absolute;
+	right:-6px;
+	top:10px;
+	width:24px;
+	height:24px;
+	background:url('http://img.xiami.net/static/img/music/icon.png') no-repeat -48px -192px;
+	_right:-7px;
+	_background-image:url('http://img.xiami.net/static/img/music/icon.gif');
+}
+
+#type .current b {
+	background-position:;
+}
+
+#type .current i {
+	display:block;
+}
+
+/**/
+#tags {
+	display:none;
+	position:absolute;
+	left:120px;
+	top:-200px;
+	z-index: 100;
+	width:300px;
+	padding:30px;
+	border:1px solid #CED4D6;
+    border-radius:3px;
+	background-color:#FFF;
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.2);
+	text-align:left;
+	_left:60px;
+}
+
+#tags dt {
+	padding:0;
+	font-size:18px;
+}
+
+#tags dd {
+	margin-bottom:25px;
+	*clear:both;
+	*padding-bottom:25px;
+}
+
+#tags li {
+	display:inline-block;
+	margin:0;
+	*float:left;
+	_background-color:#FFF;
+}
+
+#tags li a {
+	margin-right:20px;
+	color:#666;
+	*word-break:keep-all;
+}
+
+#type li:hover #tags a {
+	color:#666;
+}
+
+#type li:hover #tags li a:hover {
+	text-decoration:underline;
+}
+/**/
+
+/**/
+#tags .more a {
+	display:block;
+	border:1px solid #E1E4E6;
+	border-radius:3px;
+	background-color:#F5F9FA;
+	line-height:32px;
+	text-align:center;
+}
+
+#tags .more a:hover {
+	border:1px solid #D3D9DB;
+	background-color:#F0F4F5;
+}
+/**/
+
+/* start footer from here */
+#footer {
+	*zoom: 1;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif
+}
+
+#footer .gap {
+	overflow: hidden;
+	min-width: 984px;
+	padding: 0 20px;
+	border-top: 1px solid #e6e6e6;
+	background-color: #FFF
+}
+
+#footer .wrapper {
+	overflow: hidden;
+	width: auto;
+	_width: 980px;
+	max-width: 1100px;
+	min-width: 980px;
+	margin: 0 auto;
+	padding: 20px 0;
+	color: #999
+}
+
+#footer .wrapper .content {
+	_zoom: 1;
+	overflow: hidden;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #CCC
+}
+
+#footer .wrapper .content .sitemap {
+	float: left
+}
+
+#footer .wrapper .content .sitemap dl {
+	float: left;
+	padding: 0 30px 0 10px;
+	line-height: 22px
+}
+
+#footer .wrapper .content .sitemap dl dt {
+	position: relative;
+	margin: 0 0 5px;
+	font-weight: bold;
+	color: #666
+}
+
+#footer .wrapper .content .sitemap dl a {
+	color: #999
+}
+
+#footer .wrapper .content .sitemap dl .hot {
+	position: absolute;
+	width: 19px;
+	height: 11px;
+	background: url('http://img.xiami.net/res/v3/img/sup_hot.gif') no-repeat
+}
+
+#footer .wrapper .content .cooperation {
+	float: right;
+	width: 430px
+}
+
+#footer .wrapper .content .cooperation p {
+	overflow: hidden;
+	background: url('http://img.xiami.net/static/img/common/partners_icon.jpg') no-repeat right top
+}
+
+#footer .wrapper .content .cooperation span {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 150px;
+	padding-top: 15px
+}
+
+#footer .wrapper .content .cooperation a {
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin: 0 0 7px 5px;
+	text-decoration: none
+}
+
+#footer .wrapper .ali_group {
+	overflow: hidden;
+	border-bottom: 1px dashed #CCC
+}
+
+#footer .wrapper .ali_group a {
+	float: left;
+	margin: 10px 0 10px -1px;
+	padding: 0 10px;
+	border-left: 1px solid #EEE;
+	color: #999
+}
+
+#footer .wrapper .extra {
+	clear: both;
+	margin-top: 15px
+}
+
+#footer .wrapper .extra .sns {
+	float: left;
+	text-indent: 10px;
+	vertical-align: middle
+}
+
+#footer .wrapper .extra .sns .icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+	background: url('http://img.xiami.net/res/v3/img/sync-ico_v15.gif') no-repeat;
+	vertical-align: middle
+}
+
+#footer .wrapper .extra .sns .sina {
+	background-position: 0 -16px
+}
+
+#footer .wrapper .extra .sns a:hover .sina {
+	background-position: 0 0
+}
+
+#footer .wrapper .extra .sns .renren {
+	background-position: 0 -80px
+}
+
+#footer .wrapper .extra .sns a:hover .renren {
+	background-position: 0 -64px
+}
+
+#footer .wrapper .extra .sns .qzone {
+	background-position: 0 -272px
+}
+
+#footer .wrapper .extra .sns a:hover .qzone {
+	background-position: 0 -256px
+}
+
+#footer .wrapper .extra .sns .tqq {
+	background-position: 0 -144px
+}
+
+#footer .wrapper .extra .sns a:hover .tqq {
+	background-position: 0 -128px
+}
+
+#footer .wrapper .extra .sns .sohu {
+	background-position: 0 -48px
+}
+
+#footer .wrapper .extra .sns a:hover .sohu {
+	background-position: 0 -32px
+}
+
+#footer .wrapper .extra .sns .douban {
+	background-position: 0 -208px
+}
+
+#footer .wrapper .extra .sns a:hover .douban {
+	background-position: 0 -192px
+}
+
+#footer .wrapper .extra .sns .t163 {
+	background-position: 0 -112px
+}
+
+#footer .wrapper .extra .sns a:hover .t163 {
+	background-position: 0 -96px
+}
+
+#footer .wrapper .extra .copyright {
+	float: right;
+	color: #AAA;
+	text-align: right
+}
+
+#footer .wrapper .extra .copyright a {
+	color: #AAA
+}
+
+#footer .wrapper .extra .copyright strong {
+	display: inline-block;
+	overflow: hidden;
+	width: 117px;
+	height: 25px;
+	margin-left: 15px;
+	background-image: url('http://img.xiami.net/res/v3/img/xiami_motto.png');
+	text-indent: 100%;
+	line-height: 25px;
+	vertical-align: middle
+}

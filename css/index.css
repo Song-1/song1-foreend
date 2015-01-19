@@ -1,0 +1,1058 @@
+#recommend {
+	position: relative;
+}
+
+#recommend h2 {
+	height: 54px;
+	line-height: 54px
+}
+
+#recommend h2 strong {
+	float: left;
+	font-size: 18px
+}
+
+#recommend h2 span {
+	color: #f60
+}
+
+#recommend h2 .more {
+	color: #f60
+}
+
+#recommend .content {
+	_zoom: 1;
+	position: relative
+}
+
+#recommend .content .mosaic {
+	_position: relative;
+	float: left;
+	margin-left: 7px;
+	_margin-right: 5px
+}
+
+#recommend .content .mosaic .image {
+	overflow: hidden;
+	position: relative;
+	width: 134px;
+	height: 134px;
+	border: 3px solid #3A3935;
+	background-color: #3A3935
+}
+
+#recommend .content .mosaic .image img {
+	float: left;
+	width: 67px;
+	height: 67px;
+	background-color: #CCC
+}
+
+#recommend .content .mosaic .image .icon {
+	position: absolute;
+	z-index: 3;
+	left: 43px;
+	top: 43px;
+	width: 48px;
+	height: 48px
+}
+
+#recommend .content .mosaic .image .toplay {
+	background: url('http://img.xiami.net/static/img/common/play_icon.png') no-repeat 0 0;
+	_background-image: url('http://img.xiami.net/static/img/common/play_icon.gif');
+	cursor: pointer
+}
+
+#recommend .content .mosaic .image .toplay:hover {
+	background-position: -48px 0
+}
+
+#recommend .content .mosaic .info .reason {
+	width: 130px;
+	height: 24px;
+	padding: 0 5px;
+	background-color: #3A3935;
+	line-height: 24px;
+	color: #999
+}
+
+#recommend .content .mosaic .info .reason a {
+	margin-left: 5px;
+	color: #CCC
+}
+
+#recommend .content .mosaic .info .name {
+	text-align: center;
+	font-size: 18px;
+	line-height: 58px;
+	cursor: pointer
+}
+
+#recommend .content .view {
+	position: relative;
+	overflow: hidden;
+	max-width: 590px;
+	min-width: 470px;
+	_width: 470px;
+	height: 222px
+}
+
+#recommend .content .nav {
+	display: none;
+	position: absolute;
+	z-index: 2;
+	top: 45px;
+	width: 25px;
+	height: 50px;
+	background: url('http://img.xiami.net/static/img/index/page_icon.png') no-repeat;
+	_background-image: url('http://img.xiami.net/static/img/index/page_icon.gif');
+	outline: none
+}
+
+#recommend .content .prev {
+	left: 140px;
+	background-position: -25px 0
+}
+
+#recommend .content .prev:hover {
+	background-position: -25px -50px
+}
+
+#recommend .content .next {
+	right: -15px;
+	background-position: 0 0
+}
+
+#recommend .content .next:hover {
+	background-position: 0 -50px
+}
+
+#recommend .content .cont_main {
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	width: 3600px
+}
+
+#recommend .content .album {
+	float: left;
+	width: 140px;
+	margin-left: 7px
+}
+
+#recommend .content .album .image {
+	background-color: #CCC
+}
+
+#recommend .content .album .info .reason {
+	position: relative;
+	overflow: visible;
+	height: 24px;
+	cursor: pointer
+}
+
+#recommend .content .album .info .reason span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 130px;
+	height: 24px;
+	padding: 0 5px;
+	background: #F5F5F5;
+	line-height: 24px;
+	color: #AAA
+}
+
+#recommend .content .album .info .reason a {
+	margin: 0 5px;
+	color: #666
+}
+
+#recommend .content .album .info .reason a:hover {
+	text-decoration: none
+}
+
+#recommend .content .album .info .reason button {
+	display: block;
+	margin: 15px auto 0;
+	height: 30px;
+	padding: 0 10px;
+	border: none;
+	border-radius: 4px;
+	background-color: #999;
+	line-height: 30px;
+	color: #FFF
+}
+
+#recommend .content .album .info .reason button:hover {
+	background-color: #888
+}
+
+#recommend .content .album .info .reason .hover {
+	top: -140px;
+	width: 100px;
+	height: 134px;
+	padding: 30px 20px 0;
+	background: rgba(0,0,0,0.6);
+	background-color: #000 \9;
+	filter: alpha(opacity=80) \9;
+	white-space: normal;
+	line-height: 18px;
+	color: #FFF
+}
+
+#recommend .content .album .info .reason .hover a {
+	display: block;
+	overflow: hidden;
+	height: 36px;
+	margin: 0;
+	color: #f60
+}
+
+#recommend .content .album .info .reason .hover a:hover {
+	text-decoration: underline
+}
+
+@keyframes show_reason {
+	0% {
+		top: 0;
+		width: 130px;
+		height: 24px;
+		padding: 0 5px;
+		line-height: 24px;
+		background: #F5F5F5;
+		color: #AAA
+	}
+
+	100% {
+		top: -140px;
+		width: 100px;
+		height: 134px;
+		padding: 30px 20px 0;
+		line-height: 18px;
+		background: rgba(0,0,0,0.8);
+		color: #FFF
+	}
+}
+
+#recommend .loading {
+	height: 222px;
+	background: url('http://img.xiami.net/static/img/common/loading/loading_cd.gif') no-repeat center center
+}
+
+#albums {
+	_zoom: 1;
+	clear: both;
+	position: relative;
+	margin-top: 20px;
+	padding: 0 15px
+}
+
+#albums h2 {
+	height: 54px;
+	line-height: 54px
+}
+
+#albums h2 strong {
+	float: left;
+	font-size: 18px
+}
+
+#albums h2 span {
+	color: #f60
+}
+
+#albums h2 .more {
+	color: #f60
+}
+
+#albums h2 .action {
+	float: right;
+	overflow: hidden;
+	*margin-top: -54px
+}
+
+#albums h2 .tab {
+	overflow: hidden
+}
+
+#albums h2 .tab li {
+	position: relative;
+	float: left
+}
+
+#albums h2 .tab li a {
+	margin: 0 10px
+}
+
+#albums h2 .tab li .current,#albums h2 .tab li a:hover {
+	border-bottom: 3px solid #3A3935;
+	text-decoration: none
+}
+
+#albums h2 .tab li sup {
+	position: absolute;
+	right: 0;
+	top: 4px;
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: url('http://img.xiami.net/static/img/common/common_icon.png?v=20131227173231') no-repeat -48px -16px;
+	_background-image: url('http://img.xiami.net/static/img/common/common_icon.gif?v=20131227173231')
+}
+
+#albums h2 .tab .fence {
+	color: #EBEBEB
+}
+
+#albums .view {
+	clear: both;
+	position: relative;
+	overflow: hidden;
+	max-width: 740px;
+	min-width: 620px;
+	_width: 620px;
+	height: 198px
+}
+
+#albums .nav {
+	position: absolute;
+	z-index: 2;
+	top: 100px;
+	width: 25px;
+	height: 50px;
+	background: url('http://img.xiami.net/static/img/index/page_icon.png') no-repeat;
+	_background-image: url('http://img.xiami.net/static/img/index/page_icon.gif');
+	outline: none
+}
+
+#albums .prev {
+	left: 0;
+	background-position: -25px 0
+}
+
+#albums .prev:hover {
+	background-position: -25px -50px
+}
+
+#albums .next {
+	right: 0;
+	background-position: 0 0
+}
+
+#albums .next:hover {
+	background-position: 0 -50px
+}
+
+#albums .content_block {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	width: 2250px
+}
+
+#albums .album {
+	float: left;
+	width: 140px;
+	margin-right: 10px
+}
+
+#albums .album .image {
+	background-color: #CCC
+}
+
+#collects {
+	_zoom: 1;
+	clear: both;
+	position: relative;
+	margin-top: 20px;
+	padding: 0 15px
+}
+
+#collects h2 {
+	height: 54px;
+	line-height: 54px
+}
+
+#collects h2 strong {
+	float: left;
+	font-size: 18px
+}
+
+#collects h2 span {
+	color: #f60
+}
+
+#collects h2 .more {
+	color: #f60
+}
+
+#collects .view {
+	clear: both;
+	position: relative;
+	overflow: hidden;
+	max-width: 740px;
+	min-width: 620px;
+	_width: 620px;
+	height: 198px
+}
+
+#collects .nav {
+	position: absolute;
+	z-index: 2;
+	top: 100px;
+	width: 25px;
+	height: 50px;
+	background: url('http://img.xiami.net/static/img/index/page_icon.png') no-repeat;
+	_background-image: url('http://img.xiami.net/static/img/index/page_icon.gif');
+	outline: none
+}
+
+#collects .prev {
+	left: 0;
+	background-position: -25px 0
+}
+
+#collects .prev:hover {
+	background-position: -25px -50px
+}
+
+#collects .next {
+	right: 0;
+	background-position: 0 0
+}
+
+#collects .next:hover {
+	background-position: 0 -50px
+}
+
+#collects .content {
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	width: 3600px
+}
+
+#collects .collect {
+	float: left;
+	width: 140px;
+	margin-right: 10px
+}
+
+#collects .collect .image {
+	background-color: #CCC
+}
+
+#collects .loading {
+	height: 198px;
+	background: url('http://img.xiami.net/static/img/common/loading/loading_cd.gif') no-repeat center center
+}
+
+.big_tu{
+	
+	margin: 20px 7px;
+	
+	}
+	
+	
+	
+	
+	
+/* start 大虾推荐 from here */	
+	#playlist{
+		
+		position:relative;
+		
+		
+		
+    }
+.playlist_tit{
+	
+	border-bottom:1px dashed #e0e0e0;
+	height:40px;
+	line-height:40px;
+	
+	
+	
+	}
+#playlist li{
+	height: 48px;
+	padding-top: 1px;
+	padding-left: 10px;
+	border-bottom: 1px dashed #e0e0e0;
+	
+}
+
+#playlist .progressbar{
+	height: 1px;
+    background-color: #EBEBEB;
+	
+}
+#playlist .progressbar span{
+	
+	 display: block;
+	 height: 1px;
+	 background-color: #F50;
+	
+	
+	
+}
+
+#playlist li.play_ing:before {
+	content: "";
+	float: left;
+	margin-left: -10px;
+	width: 4px;
+	height: 100%;
+	background: #3CC20B;
+}
+
+#playlist .main_tit {
+	line-height: 20px;
+	margin-top: 7px;
+	font-size: 18px;
+	font-weight: 400;
+	color: #000;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+#playlist .sub_tit {
+	display: block;
+	font-size: 13px;
+	color: #8F8F8F;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/*end 大虾推荐*/
+
+/* start 新碟首发 from here */
+.TTSlider{margin: 0;padding: 0; width:740px;margin: 30px auto}
+.TTSlider li{list-style-type:none;float: left;}
+.TTSlider li img{border: none;}
+.TTSliderTitle{height: 23px;}
+.TTSliderTitle ul{width: 980px;}
+.TTSliderTitle li{width: 84px;height: 23px; line-height:25px; text-align:center; position: relative;z-index: 3;left: 0;}
+.TTSliderTitle li div{border-right: 1px solid #C3C5C7;left: 0;right: 0;top: 0;bottom: 0;position: absolute;_width:139px;_height:62px}
+.TTSliderTitle .cur div{background:#fa8723;z-index: 3;border-bottom: none; border-left:1px solid #C3C5C7; bottom: -2px;_height:63px;_width:136px}
+.TTSliderTitle .noneBorRight div{border-right: none;}
+.TTSliderTitle li a{display: block;width: 50%;float: left;height: 100%;line-height: 61px;text-decoration: none;overflow: hidden;*width:49%;font-size: 12px}
+.TTSliderTitle li a img{height: 50px;margin: 6px;width: 50px}
+.TTSliderTitle .new_more{float:left; margin-right:30px;}
+.TTSliderPic{width: 740px;padding: 13px 0px;position: relative;height: 180px;z-index: 1}
+.TTSliderPicList{position: relative;width:740px;overflow: hidden;height:180px;}
+.TTSliderPic ul{position: absolute;display: none;top:3px;left: 0}
+.TTSliderPic ul.show{display: block;}
+.TTSliderPic li img{width:150px }
+.TTSliderPic li{width: 140px;padding-left: 7px;height: 180px;}
+.TTSliderPic li a{display: block;height: 150px;overflow: hidden;}
+.TTSliderPic li p{height: 30px;line-height: 30px;text-align: center;color: #ED0A0A}
+.TTSliderPrevBtn,.TTSliderNextBtn{height: 100%;position: absolute;z-index: 999;top: 0;text-align: center;}
+.TTSliderPrevBtn{left:0}
+.TTSliderNextBtn{right: 0;}
+.TTSliderPrevBtn a,.TTSliderNextBtn a{height: 30px;width: 20px;display: inline-block;background:url(../images/zhuanji/btn.png) no-repeat;margin-top: 75px}
+.TTSliderNextBtn a{background:url(../images/zhuanji/btn.png) no-repeat -30px 0}
+/*end 新碟首发*/
+
+
+/* start 微信二维码 from here */
+#login_mobile {
+	font-size:12px;
+	_zoom: 1;
+	position: relative;
+	height: 185px;
+	border: 1px solid #EBEBEB;
+	border-radius: 4px;
+	background: url('http://img.xiami.net/static/img/index/unlogin_mobile.jpg') no-repeat
+}
+
+#login_mobile .qrcode {
+	position: absolute;
+	left: 15px;
+	top: 60px;
+	width: 110px;
+	height: 110px;
+	background: url('http://img.xiami.net/static/img/common/qrcode/qrcode_110.png?v=20140715133653') no-repeat
+}
+
+#login_mobile .ios {
+	position: absolute;
+	right: 30px;
+	top: 70px;
+	width: 100px;
+	padding: 2px 5px;
+	border-radius: 4px;
+	background-color: #4398DE;
+	color: #FFF;
+	text-decoration: none
+}
+
+#login_mobile .ios:hover {
+	background-color: #3B87C4
+}
+
+#login_mobile .android {
+	position: absolute;
+	right: 30px;
+	bottom: 25px;
+	width: 100px;
+	padding: 2px 5px;
+	border-radius: 4px;
+	background-color: #7CA627;
+	color: #FFF;
+	text-decoration: none
+}
+
+#login_mobile .android:hover {
+	background-color: #688C20
+}
+
+#login_mobile .icon {
+	float: left;
+	width: 32px;
+	height: 32px;
+	margin-right: 5px;
+	background: url('http://img.xiami.net/static/img/index/unlogin_icon.png') no-repeat;
+	_background-image: url('http://img.xiami.net/static/img/index/unlogin_icon.gif')
+}
+
+#login_mobile .ios .icon {
+	background-position: 0 -32px
+}
+
+#login_mobile .android .icon {
+	background-position: -32px -32px
+}
+/*end 微信二维码*/
+
+/* start 微博QQ from here */
+#login_thirdparty {
+	_zoom: 1;
+	overflow: hidden;
+	margin-top: 20px;
+	padding: 0 15px;
+	border-width: 1px 1px 0;
+	border-style: solid;
+	border-color: #EBEBEB;
+	border-radius: 4px 4px 0 0;
+	background-color: #FFF
+}
+
+#login_thirdparty span {
+	float: left;
+	font-size: 14px;
+	line-height: 80px
+}
+
+#login_thirdparty ul {
+	float: right;
+	margin-top: 20px
+}
+
+#login_thirdparty ul li {
+	float: left;
+	margin-left: 15px
+}
+
+#login_thirdparty ul li a {
+	display: block;
+	width: 40px;
+	height: 36px;
+	padding-top: 4px;
+	border-radius: 40px
+}
+
+#login_thirdparty ul .icon {
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: 0 auto;
+	background: url('http://img.xiami.net/static/img/index/unlogin_icon.png') no-repeat;
+	_background-image: url('http://img.xiami.net/static/img/index/unlogin_icon.gif')
+}
+
+#login_thirdparty ul .weibo {
+	background-color: #E63E32
+}
+
+#login_thirdparty ul .weibo .icon {
+	background-position: 0 0
+}
+
+#login_thirdparty ul .weibo:hover,#login_thirdparty ul .weibo:active {
+	background-color: #CC293F
+}
+
+#login_thirdparty ul .qq {
+	background-color: #3595CC
+}
+
+#login_thirdparty ul .qq .icon {
+	background-position: -33px 0
+}
+
+#login_thirdparty ul .qq:hover,#login_thirdparty ul .qq:active {
+	background-color: #247EB3
+}
+
+#login_thirdparty ul .taobao {
+	background-color: #FF6C0A
+}
+
+#login_thirdparty ul .taobao .icon {
+	background-position: -65px 0
+}
+
+#login_thirdparty ul .taobao:hover,#login_thirdparty ul .taobao:active {
+	background-color: #E65C00
+}
+
+
+
+#login_xiami {
+	_zoom: 1;
+	overflow: hidden;
+	padding: 0 15px;
+	*padding: 0 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #EBEBEB;
+	border-radius: 0 0 4px 4px;
+	background: #FCFCFC
+}
+
+#login_xiami .login {
+	float: left;
+	margin-top: 8px;
+	padding: 0 10px;
+	border-radius: 4px;
+	background-color: #f60;
+	color: #FFF;
+	line-height: 30px;
+	text-decoration: none
+}
+
+#login_xiami .login:hover {
+	background-color: #E55800
+}
+
+#login_xiami span {
+	float: right;
+	line-height: 46px;
+	color: #666
+}
+
+#login_xiami .reg {
+	color: #f60
+}
+/*end 微博QQ*/
+
+/* start 场景 from here */
+#scene {
+	border: 1px solid #EBEBEB;
+	border-radius: 4px;
+	background-color: #FFF;
+	margin-top: 20px
+}
+
+#scene h2 {
+	height: 40px;
+	margin: 0 15px;
+	border-bottom: 1px solid #EBEBEB;
+	line-height: 40px;
+	text-align: center
+}
+
+#scene h2 strong {
+	font-size: 14px
+}
+
+#scene .content {
+	_zoom: 1;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 10px
+}
+
+#scene .item {
+	position: relative;
+	float: left;
+	margin: 10px 0 0 16px;
+	_margin: 10px 8px 0;
+	text-align: center
+}
+
+#scene .item .image {
+	width: 55px;
+	height: 55px
+}
+
+#scene .item .image img {
+	width: 55px;
+	height: 55px
+}
+
+#scene .item .image .icon {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	left: 15px;
+	top: 15px;
+	width: 24px;
+	height: 24px;
+	background: url('http://img.xiami.net/static/img/common/play_icon.png') no-repeat 0 -48px;
+	_background-image: url('http://img.xiami.net/static/img/common/play_icon.gif');
+	cursor: pointer
+}
+
+#scene .item .image .toplay {
+	background-position: 0 -48px
+}
+
+#scene .item .image .toplay:hover {
+	background-position: -24px -48px
+}
+
+#scene .item .info {
+	line-height: 24px
+}
+
+#scene .item .info a {
+	color: #AAA
+}
+
+#scene .item .info a:hover {
+	color: #333
+}
+
+#scene .loading {
+	height: 185px;
+	background: url('http://img.xiami.net/static/img/common/loading/loading_cd.gif') no-repeat center center
+}
+
+/*end 场景*/
+
+
+/* start 首页底部选项卡 from here */
+.clear_both{clear:both; width:1050px; height:auto; background-color:#fff; margin-top:15px;}
+li{list-style:none;}
+#tab1{width:1050px;height:34px;border-bottom:0;}
+#tab1 ul{margin:0;padding:0;}
+#tab1 li{float:left;padding:0 30px;height:34px;line-height:34px;text-align:center;cursor:pointer;}
+#tab1 li.now{color:#000;background:#fa8723;}
+.tablist{width:1050px;height:auto;font-size:14px;line-height:24px;border-top:0;display:none; overflow:hidden;}
+.block{display:block;}
+#tablist1{width:1050px; height:auto;}
+#tablist1 ul{height:auto; }
+#tablist1 ul li{float:left; margin-left:21px; height:250px;}
+#tablist1 ul li p a {text-decoration:none; color:#000; padding-left:4px;}
+#tablist1 ul li a.text_color{color:#999; font-size:12px;}
+#tablist1 ul li p a:hover{text-decoration:underline;}
+/*end 首页底部选项卡*/
+
+/* start footer from here */
+#footer {
+	*zoom: 1;
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif
+}
+
+#footer .gap {
+	overflow: hidden;
+	min-width: 984px;
+	padding: 0 20px;
+	border-top: 1px solid #e6e6e6;
+	background-color: #FFF
+}
+
+#footer .wrapper {
+	overflow: hidden;
+	width: auto;
+	_width: 980px;
+	max-width: 1100px;
+	min-width: 980px;
+	margin: 0 auto;
+	padding: 20px 0;
+	color: #999
+}
+
+#footer .wrapper .content {
+	_zoom: 1;
+	overflow: hidden;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #CCC
+}
+
+#footer .wrapper .content .sitemap {
+	float: left
+}
+
+#footer .wrapper .content .sitemap dl {
+	float: left;
+	padding: 0 30px 0 10px;
+	line-height: 22px
+}
+
+#footer .wrapper .content .sitemap dl dt {
+	position: relative;
+	margin: 0 0 5px;
+	font-weight: bold;
+	color: #666
+}
+
+#footer .wrapper .content .sitemap dl a {
+	color: #999
+}
+
+#footer .wrapper .content .sitemap dl .hot {
+	position: absolute;
+	width: 19px;
+	height: 11px;
+	background: url('http://img.xiami.net/res/v3/img/sup_hot.gif') no-repeat
+}
+
+#footer .wrapper .content .cooperation {
+	float: right;
+	width: 430px
+}
+
+#footer .wrapper .content .cooperation p {
+	overflow: hidden;
+	background: url('http://img.xiami.net/static/img/common/partners_icon.jpg') no-repeat right top
+}
+
+#footer .wrapper .content .cooperation span {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 150px;
+	padding-top: 15px
+}
+
+#footer .wrapper .content .cooperation a {
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin: 0 0 7px 5px;
+	text-decoration: none
+}
+
+#footer .wrapper .ali_group {
+	overflow: hidden;
+	border-bottom: 1px dashed #CCC
+}
+
+#footer .wrapper .ali_group a {
+	float: left;
+	margin: 10px 0 10px -1px;
+	padding: 0 10px;
+	border-left: 1px solid #EEE;
+	color: #999
+}
+
+#footer .wrapper .extra {
+	clear: both;
+	margin-top: 15px
+}
+
+#footer .wrapper .extra .sns {
+	float: left;
+	text-indent: 10px;
+	vertical-align: middle
+}
+
+#footer .wrapper .extra .sns .icon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+	background: url('http://img.xiami.net/res/v3/img/sync-ico_v15.gif') no-repeat;
+	vertical-align: middle
+}
+
+#footer .wrapper .extra .sns .sina {
+	background-position: 0 -16px
+}
+
+#footer .wrapper .extra .sns a:hover .sina {
+	background-position: 0 0
+}
+
+#footer .wrapper .extra .sns .renren {
+	background-position: 0 -80px
+}
+
+#footer .wrapper .extra .sns a:hover .renren {
+	background-position: 0 -64px
+}
+
+#footer .wrapper .extra .sns .qzone {
+	background-position: 0 -272px
+}
+
+#footer .wrapper .extra .sns a:hover .qzone {
+	background-position: 0 -256px
+}
+
+#footer .wrapper .extra .sns .tqq {
+	background-position: 0 -144px
+}
+
+#footer .wrapper .extra .sns a:hover .tqq {
+	background-position: 0 -128px
+}
+
+#footer .wrapper .extra .sns .sohu {
+	background-position: 0 -48px
+}
+
+#footer .wrapper .extra .sns a:hover .sohu {
+	background-position: 0 -32px
+}
+
+#footer .wrapper .extra .sns .douban {
+	background-position: 0 -208px
+}
+
+#footer .wrapper .extra .sns a:hover .douban {
+	background-position: 0 -192px
+}
+
+#footer .wrapper .extra .sns .t163 {
+	background-position: 0 -112px
+}
+
+#footer .wrapper .extra .sns a:hover .t163 {
+	background-position: 0 -96px
+}
+
+#footer .wrapper .extra .copyright {
+	float: right;
+	color: #AAA;
+	text-align: right
+}
+
+#footer .wrapper .extra .copyright a {
+	color: #AAA
+}
+
+#footer .wrapper .extra .copyright strong {
+	display: inline-block;
+	overflow: hidden;
+	width: 117px;
+	height: 25px;
+	margin-left: 15px;
+	background-image: url('http://img.xiami.net/res/v3/img/xiami_motto.png');
+	text-indent: 100%;
+	line-height: 25px;
+	vertical-align: middle
+}
+/*end footer*/
