@@ -2563,7 +2563,7 @@ input[type=checkbox] {
 	margin: 14px 0 14px 10px;
 	overflow: hidden;
 	font-size: 0;
-	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAMCAYAAAC0qUeeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA6SURBVChTY0AH/1IZDv9PY/gPoqFCuAFIIQxDhXADihTjdRa6YnQ+CkCXROGjW4Miic5H4Qw7xQz/AR6CwDExYgN8AAAAAElFTkSuQmCC") no-repeat 50% 50%
+	aabackground: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAMCAYAAAC0qUeeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA6SURBVChTY0AH/1IZDv9PY/gPoqFCuAFIIQxDhXADihTjdRa6YnQ+CkCXROGjW4Miic5H4Qw7xQz/AR6CwDExYgN8AAAAAElFTkSuQmCC") no-repeat 50% 50%
 }
 
 .ks-ie7 .ui-track-current .ui-track-sort em {
@@ -2571,8 +2571,8 @@ input[type=checkbox] {
 }
 
 .playing .ui-track-current .ui-track-sort em {
-	background: url(http://gtms01.alicdn.com/tps/i1/T1X4JEFq8qXXXaYEA_-11-12.gif) no-repeat 0 0;
-	cursor: default!important
+	aabackground: url(http://gtms01.alicdn.com/tps/i1/T1X4JEFq8qXXXaYEA_-11-12.gif) no-repeat 0 0;
+	aacursor: default!important
 }
 
 .ui-track-current .ui-track-sort em:hover {
@@ -3349,4 +3349,8 @@ input[type=checkbox] {
 .ui-roam-item:nth-child(6) a:hover {
 	color: #ccc;
 	text-decoration: underline
+}
+.yinlv {
+    background: url(http://gtms01.alicdn.com/tps/i1/T1X4JEFq8qXXXaYEA_-11-12.gif) no-repeat 0 0;
+
 }

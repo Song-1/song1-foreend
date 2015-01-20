@@ -13,7 +13,7 @@ MPlayer = {
 		
 		musicMode : 'list',
 		
-		musicIndex: 5,
+		musicIndex: 1,
 		
 		audiodur : null,
 
@@ -245,8 +245,8 @@ MPlayer = {
 		
 		function playMusicMode(action){
 			
-		var musicNum =playList.length;
-		
+		var musicNum =$('#J_playTracksList>.ui-row-item').length;
+
 		var index =MPlayer.musicIndex;
 
 		if (MPlayer.musicMode == 'list' ) {
@@ -265,8 +265,8 @@ MPlayer = {
 				else{
 					index += 1;
 				}
-			};
-		};
+			}
+		}
 		if (MPlayer.musicMode == 'repeat') {
 			if (action == 'prev') {
 				if (index == 1) { 
@@ -288,8 +288,7 @@ MPlayer = {
 				index=index;
 					
 			}
-		};
-		
+		}
 		if (MPlayer.musicMode == 'shuffle') {
 			var randomIndex = parseInt(musicNum * Math.random());
 			index = randomIndex + 1;
@@ -298,8 +297,20 @@ MPlayer = {
 			};
 		};
 		 MPlayer.musicIndex=index;
-		
-		 MPlayer.play(playList[index-1]);
+            $('#J_playTracksList>.ui-row-item').each(function(){
+                $(this).removeClass('ui-track-current');
+            });
+            var itemObj=document.getElementById('J_playTracksList').getElementsByClassName('ui-row-item')[index-1];
+                itemObj.className='ui-row-item ui-track-item ui-track-current';
+                itemObj.getElementsByTagName('em')[0].className='yinlv';
+            //$('.ui-row-item:eq(index)').attr('class','ui-row-item ui-track-item ui-track-current');
+            //$('.ui-row-item:eq(index) .ui-track-sort').children('em').attr('class','yinlv');
+            //document.getElementById('play_song_'+(index-1)).className='ui-row-item ui-track-item ui-track-current';
+           //document.getElementById('play_song_'+(index-1)).getElementsByTagName('em')[0].className='yinlv';
+            var musicSrc=itemObj.id;
+           var music_Index=parseInt(musicSrc.substring(10,11));
+		 MPlayer.play(playList[music_Index]);
+
 			
        }
 	   
@@ -425,7 +436,7 @@ MPlayer = {
 			
 			loadedmetadataCb: function(e) {
 				
-   				console.log("Playing " + audio.src + ", for: " + audio.duration + "seconds.");
+   				//console.log("Playing " + audio.src + ", for: " + audio.duration + "seconds.");
 				
     			 MPlayer._player.play();
 					
